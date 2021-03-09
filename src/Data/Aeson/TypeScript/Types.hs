@@ -76,12 +76,15 @@ data FormattingOptions = FormattingOptions
   -- ^ Function applied to generated interface names
   , typeNameModifier :: String -> String
   -- ^ Function applied to generated type names
+  , exportTypes :: Bool
+  -- ^ Prefix the generated types with "export" if set to 'True'.
   }
 
 defaultFormattingOptions = FormattingOptions
   { numIndentSpaces = 2
   , interfaceNameModifier = id
   , typeNameModifier = id
+  , exportTypes = False
   }
 
 -- | Convenience typeclass class you can use to "attach" a set of Aeson encoding options to a type.
